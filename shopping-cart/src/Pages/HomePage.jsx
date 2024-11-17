@@ -1,6 +1,12 @@
+import ProductList from "../Components/ProductList/ProductList";
+
+
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <main>
+      <h1>Products</h1>
+      <ProductList/>
+    </main>
   )
 }
 

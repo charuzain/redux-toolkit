@@ -1,14 +1,14 @@
-*{
-  padding:0;
-  margin:0;
-  content-box:border-box
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-li{
-  list-style:none
+li {
+  list-style: none;
 }
 
-a{
-  text-decoration:none;
-  color:unset;
+a {
+  text-decoration: none;
+  color: unset;
 }
