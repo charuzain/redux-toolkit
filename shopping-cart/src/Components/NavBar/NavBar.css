@@ -1,0 +1,17 @@
+.nav {
+  background-color: rgb(41, 32, 32);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.nav__logo {
+  margin-left: 2rem;
+}
+.nav__list {
+  display: flex;
+  gap: 3rem;
+}
+.nav__item:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=NavBar.css.map */

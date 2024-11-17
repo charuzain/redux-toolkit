@@ -1,0 +1,25 @@
+.nav{
+  background-color: rgb(41, 32, 32);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+  &__logo{
+    margin-left: 2rem;
+  }
+
+  &__list{
+    display: flex;
+    gap:3rem;
+  }
+
+  &__item{
+      &:hover{
+      text-decoration: underline; 
+    }
+
+  }
+
+
+}
