@@ -19,20 +19,26 @@ const ProductList = () => {
     fetchProducts();
   }, []);
   return (
-    <div>
+    <div className="product">
       {products.map((product) => (
-        <article key={product.id}>
-          <div>
-            <img src={product.image} alt={product.title} />
+        <article key={product.id} className="product__card">
+          <div className="product__image-container">
+            <img
+              src={product.image}
+              alt={product.title}
+              className="product__image"
+            />
           </div>
           <div>
-            <p>{product.title}</p>
-            <p>{product.price}</p>
-          </div>
-          <div>
-            <button>+</button>
-            <span>1</span>
-            <button>-</button>
+            <div className="product__info">
+              <p className="product__title">{product.title}</p>
+              <p className="product__price">{product.price}</p>
+            </div>
+            <div className="product__buttons">
+              <button className="product__button">+</button>
+              <span className="product__quality">1</span>
+              <button className="product__button">-</button>
+            </div>
           </div>
         </article>
       ))}

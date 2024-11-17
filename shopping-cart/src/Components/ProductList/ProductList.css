@@ -1,0 +1,22 @@
+.product {
+  border: 2px solid green;
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+.product__card {
+  max-width: 350px;
+  border: 2px solid purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.product__image-container {
+  border: 2px solid red;
+}
+.product__image {
+  width: 100%;
+}/*# sourceMappingURL=ProductList.css.map */
