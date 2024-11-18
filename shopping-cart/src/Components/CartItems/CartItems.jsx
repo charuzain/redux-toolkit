@@ -65,7 +65,7 @@ const CartItems = () => {
           <p className="cart__item">${item.price}</p>
           <p className="cart__item">${productTotal(item.id)}</p>
           <div className="cart__item">
-            <button onClick={() => removeHandler(item.id)}>Remove</button>
+            <button className='cart__button' onClick={() => removeHandler(item.id)}>Remove</button>
           </div>
         </article>
       ))}
