@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { act } from 'react';
 
 const initialState = [];
 
@@ -26,13 +25,12 @@ export const cartSlice = createSlice({
 
       const index = state.findIndex((product) => product.id === action.payload);
       if (index !== -1) {
-        if (state[index].quantity >= 1) {
+        if (state[index].quantity > 1) {
           state[index].quantity -= 1;
+        } else {
+          return state.filter((item) => item.id !== action.payload);
         }
-        
       }
-
-      // return state.filter((item) => item.id !== action.payload);
     },
   },
 });

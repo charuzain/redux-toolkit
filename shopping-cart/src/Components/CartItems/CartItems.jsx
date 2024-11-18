@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import './CartItems.scss'
+import CartTotal from '../CartTotal/CartTotal'
 const CartItems = () => {
   const cartItems = useSelector(state => state.cart)
   console.log(cartItems)
@@ -16,7 +17,9 @@ const CartItems = () => {
             <button>Remove</button>
           </div>
         </article>
+        
       ))}
+      <CartTotal/>
     </>
   );
 }

@@ -68,11 +68,13 @@ const ProductList = () => {
                 >
                   +
                 </button>
-                <span className="product__quality">{productCount(product.id)}
+                <span className="product__quality">
+                  {productCount(product.id)}
                 </span>
                 <button
                   onClick={() => decrementHandler(product.id)}
                   className="product__button"
+                  disabled={productCount(product.id) === 0}
                 >
                   -
                 </button>
