@@ -21,7 +21,6 @@ export const cartSlice = createSlice({
       );
     },
     removeFromCart: (state, action) => {
-      console.log(action.payload);
 
       const index = state.findIndex((product) => product.id === action.payload);
       if (index !== -1) {
@@ -32,8 +31,12 @@ export const cartSlice = createSlice({
         }
       }
     },
+
+    emptyCart: (state , action) => {
+      return state.filter(product => product.id !== action.payload)
+    }
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart,emptyCart } = cartSlice.actions;
 export default cartSlice.reducer;

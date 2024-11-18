@@ -1,9 +1,15 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './CartItems.scss'
 import CartTotal from '../CartTotal/CartTotal'
+import { emptyCart } from '../../slice/cartSlice'
 const CartItems = () => {
   const cartItems = useSelector(state => state.cart)
   console.log(cartItems)
+  const dispatch = useDispatch()
+  const removeHandler = (id) => {
+    dispatch(emptyCart(id))
+    
+  }
   return (
     <>
       {cartItems.map((item) => (
@@ -14,7 +20,7 @@ const CartItems = () => {
           </div>
           <p>{item.price}</p>
           <div>
-            <button>Remove</button>
+            <button onClick={()=> removeHandler(item.id)}>Remove</button>
           </div>
         </article>
         
