@@ -22,11 +22,13 @@
     height: 300px;
     width: 100%;
     clip: inherit;
+    padding:1rem;
   }
 
   &__image {
     width: 100%;
     height: 100%;
+    display: block;
   }
 
   &__info{
@@ -36,6 +38,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+    padding:0 1rem;
   }
 
   &__buttons {

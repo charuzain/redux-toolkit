@@ -59,7 +59,7 @@ const ProductList = () => {
             <div>
               <div className="product__info">
                 <p className="product__title">{product.title}</p>
-                <p className="product__price">{product.price}</p>
+                <p className="product__price">$ {product.price}</p>
               </div>
               <div className="product__buttons">
                 <button
