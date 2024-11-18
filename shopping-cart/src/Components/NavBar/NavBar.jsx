@@ -3,7 +3,7 @@ import './NavBar.scss'
 import { useSelector } from "react-redux";
 
 const NavBar = () => {
-  const totalProduct = useSelector(state => state.cart.length)
+  const totalProduct = useSelector(state => state.cart.reduce((a,c)=> a + c.quantity ,0))
   console.log(totalProduct)
   return (
     <nav className="nav">
