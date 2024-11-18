@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import './NavBar.scss'
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
+  const totalProduct = useSelector(state => state.cart.length)
+  console.log(totalProduct)
   return (
     <nav className="nav">
         <div className="nav__logo">
@@ -12,7 +15,7 @@ const NavBar = () => {
           <li className="nav__item"><Link to={'/cart'}>Cart</Link></li>
         </ul>
         <div>
-        <p>Cart Total : 0</p>
+        <p>Cart Total : {totalProduct}</p>
         </div>
     </nav>
   )

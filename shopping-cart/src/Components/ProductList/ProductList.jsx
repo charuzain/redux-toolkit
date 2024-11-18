@@ -1,15 +1,37 @@
 import axios from 'axios';
 import './ProductList.scss';
 import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart, removeFromCart } from '../../slice/cartSlice';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
+  const dispatch = useDispatch()
+  const count = useSelector(state => state.cart)
+
+  const productCount = (id) => {
+    return count.filter(product => product.id === id).length
+
+  } 
+
+
+
+
+  const IncrementHandler = (product) => {
+    dispatch(addToCart(product))
+  }
+
+  const decrementHandler = (id) => {
+    dispatch(removeFromCart(id));
+  };
 
   const fetchProducts = async () => {
     try {
       const response = await axios.get('https://fakestoreapi.com/products');
       const productList = response.data;
+      console.log(productList)
       setProducts(productList);
+
     } catch (error) {
       console.log(error);
     }
@@ -35,9 +57,19 @@ const ProductList = () => {
               <p className="product__price">{product.price}</p>
             </div>
             <div className="product__buttons">
-              <button className="product__button">+</button>
-              <span className="product__quality">1</span>
-              <button className="product__button">-</button>
+              <button
+                onClick={() => IncrementHandler(product)}
+                className="product__button"
+              >
+                +
+              </button>
+              <span className="product__quality">{productCount(product.id)}</span>
+              <button
+                onClick={() => decrementHandler(product.id)}
+                className="product__button"
+              >
+                -
+              </button>
             </div>
           </div>
         </article>
